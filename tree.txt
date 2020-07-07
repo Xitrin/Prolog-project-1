@@ -1,0 +1,23 @@
+% Farkhad Gapparov 5007128721 Sec 052
+1)
+?- replace(a, b, tree(a, tree(c, void, void), tree(a, void, void)), T).
+T = tree(b, tree(c, void, void), tree(b, void, void))
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
+
+?- replace(7, 9, tree(4, tree(2, tree(1, void, void), tree(3, void, void)), tree(6, tree(5, void, void), tree(7, void, void))), X).
+X = tree(4, tree(2, tree(1, void, void), tree(3, void, void)), tree(6, tree(5, void, void), tree(9, void, void)))
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
+
+2)
+
+?- expand(2, tree(4, void, void), T2), expand(1, T2, T1), expand(3, T1, T3), expand(6, T3, T6), expand(5, T6, T5), expand(7, T5, T7).
+T2 = tree(4, tree(2, void, void), void)
+T1 = tree(4, tree(2, tree(1, void, void), void), void)
+T3 = tree(4, tree(2, tree(1, void, void), tree(3, void, void)), void)
+T6 = tree(4, tree(2, tree(1, void, void), tree(3, void, void)), tree(6, void, void))
+T5 = tree(4, tree(2, tree(1, void, void), tree(3, void, void)), tree(6, tree(5, void, void), void))
+T7 = tree(4, tree(2, tree(1, void, void), tree(3, void, void)), tree(6, tree(5, void, void), tree(7, void, void)))
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)

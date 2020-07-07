@@ -1,0 +1,73 @@
+% Farkhad Gapparov 5007128721 Sec 052
+
+1) 
+?- add(4, [1, 2, 3], X).
+X = [1, 2, 3]
+Yes (0.00s cpu)
+
+?- add(0, [], X).
+X = []
+Yes (0.00s cpu)
+
+?- add(0, [a, b, c, d], X).
+X = []
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
+
+?- add(0, [q], [q]).
+No (0.00s cpu)
+
+?- add(1, [], [a, b, c]).
+No (0.00s cpu)
+
+?- add(3, [a, b, z, c], [a, b, c]).
+No (0.00s cpu)
+
+2)
+?- convert([], []).
+Yes (0.00s cpu)
+
+?- convert([five], [5]).
+Yes (0.00s cpu)
+
+?- convert([one, two, three, four], X).
+X = [1, 2, 3, 4]
+Yes (0.00s cpu)
+
+?- convert([one, two, three, four], [1, 2, 3, 4]).
+Yes (0.00s cpu)
+
+?- convert([two, four], []).
+No (0.00s cpu)
+
+?- convert([two, six], [two, six]).
+No (0.00s cpu)
+
+?- convert([four], 4).
+No (0.00s cpu)
+
+
+3)
+?- grep([a], [a, b, [c, a], [a], d, [a], [[a]], e], X).
+X = [4, 6]
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
+
+?- grep(live, [learn, as, if, you, were, to, live, forever], A).
+A = [7]
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
+
+?- grep([1, 2], [a, b, [1, 2, 3], c, [1, 2], d], [5]).
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
+
+// not sure why but in original *toTest query looked like this: ?- grep(1, [1, 2, 3, 4, 5, 6, 3, 2, 1], X]). that square bracket confused me
+
+?- grep(1, [1, 2, 3, 4, 5, 6, 3, 2, 1], X).
+X = [1, 9]
+Yes (0.00s cpu, solution 1, maybe more)
+No (0.00s cpu)
+
+?- grep(1, [1, 2, 3, 4, 5, 6, 3, 2, 1], [X]).
+No (0.00s cpu)
